@@ -1,0 +1,20 @@
+BẢN CÁ NHÂN HÓA LÊ QUANG THỊNH / @sinh.vien.ai
+
+1. Giải nén gói ZIP trong ứng dụng Tệp trên iPhone.
+2. Mở https://github.com/ggaiprothinh-coder/Module_IOS/upload/main
+3. Chọn tất cả file trong thư mục đã giải nén (file cấu hình, các file .js và ảnh .png), tải thẳng lên thư mục gốc của kho; không tạo thêm thư mục bọc bên ngoài. Chọn Commit changes.
+4. Trong Shadowrocket, cập nhật hoặc nhập lại module bằng link:
+https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/All_In_One_locketlqt.sgmodule
+5. Tắt các module Locket cũ có cùng quy tắc Remote Config để tránh xung đột; đóng rồi mở lại Locket. Nếu app vẫn hiển thị dữ liệu cũ, kiểm tra log xem Locket_Unlocked.js và ảnh mới đã được tải thành công. Popup có thể dùng dữ liệu đã lưu của app; chưa kiểm chứng trực tiếp trên thiết bị của bạn.
+
+THAY ĐỔI:
+- Dòng giới thiệu dùng Lê Quang Thịnh, TikTok @sinh.vien.ai.
+- Thay ảnh quảng bá cũ bằng locketlqt-banner.png.
+- Đổi campaign để phân biệt popup cá nhân hóa.
+- Sửa toàn bộ script-path về đúng kho ggaiprothinh-coder/Module_IOS.
+- Kèm 21 file JavaScript để các đường dẫn mới có file tương ứng.
+- Các chức năng của script gốc được giữ theo nguồn đã cung cấp; chỉ kiểm tra cú pháp và cấu hình popup, chưa kiểm thử toàn bộ chức năng từng app.
+
+NGUỒN:
+Các script gốc được lấy từ https://github.com/duyvinh09/Module_IOS . Giữ lại thông tin tác giả trong mã nguồn. Banner mới tạo riêng cho Lê Quang Thịnh.
+
