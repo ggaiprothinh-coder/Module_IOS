@@ -61,24 +61,7 @@ if (ua.includes("Locket")) {
             interval: 2592000,
             profile_banner: true
         }),
-        feature_discovery_popup_config: JSON.stringify({
-            tag: "LOCKET GOLD",
-            tag_gradient: true,
-            tag_style: "gold_gradient",
-            title: "Lên Locket Gold rồi đó 😎",
-            feature_set: [
-                {
-                    title: "Nhớ follow kênh tiktok @sinh.vien.ai ✨",
-                    body: "Một follow của bạn, một niềm vui của mình 💛",
-                    imageURL: "https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-avatar.jpg?v=5"
-                }
-            ],
-            primary_button_title: "Xong",
-            campaign: "locketlqt_gold_name_image_20261017_v5",
-            start_at: "2020-01-01T00:00:00",
-            end_at: "2099-12-31T23:59:59",
-            use_local_time_zone: true
-        }),
+        feature_discovery_popup_config: JSON.stringify({ enabled: false, feature_set: [] }),
         android_subscribe_gold_button_enabled: "false",
         profile_badge_visible: "true",
         lunar_new_year_app_icon_enabled: "true",
