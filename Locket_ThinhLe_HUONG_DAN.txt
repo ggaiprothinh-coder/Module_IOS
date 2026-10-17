@@ -5,7 +5,7 @@ GÓI NÀY CÓ GÌ?
 - Locket_ThinhLe.sgmodule: chỉ các quy tắc Locket, không còn YouTube, Spotify hay app khác.
 - Locket_Only_Gold.js: phần phản hồi RevenueCat tách từ gói bạn cung cấp.
 - Locket_Only_Headers.js: xử lý ETag cho yêu cầu Locket.
-- Locket_Only_Config.js: giữ cấu hình và overlay Locket từ gói gốc, thay nội dung popup.
+- Locket_Only_Config_v3.js: giữ cấu hình và overlay Locket từ gói gốc, thay nội dung popup, kể cả khi yêu cầu Firebase không dùng User-Agent Locket.
 - locketlqt-profile-ipa.png: ảnh giới thiệu nền tối, viền tím, đúng logo lấy từ IPA.
 - Locket_UI.js: phục vụ giao diện đầy đủ tại địa chỉ dành riêng bên dưới.
 - Locket_UI.html: bản giao diện HTML độc lập, đã nhúng logo vào tệp.
@@ -25,18 +25,19 @@ CÀI ĐẶT
 3. Sau khi các tệp đã xuất hiện trên GitHub, vào phần Module của Shadowrocket và thêm URL:
    https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_ThinhLe.sgmodule
    URL này chỉ dùng được sau bước 2; gói chưa được tự đăng lên repo của bạn.
-4. Tắt module All_In_One_locketlqt hoặc các quy tắc Locket/RevenueCat cũ bị trùng trước khi bật bản riêng này. Nếu muốn giữ các app khác trong All-in-One, bỏ riêng các dòng LocketGold và RevenueCatVip đang chồng lên endpoint Locket.
+4. Tắt module All_In_One_locketlqt và mọi module Locket khác đang bật trước khi bật bản riêng này. Nếu vẫn muốn dùng All-in-One cho app khác, phải bỏ riêng các quy tắc LocketGold/locket_rc và quy tắc RevenueCatVip chồng lên Locket trong bản đó.
 5. HTTPS Decryption phải đang bật, chứng chỉ Shadowrocket đã cài và được tin cậy để các quy tắc HTTPS chạy. Giữ chứng chỉ hiện có nếu đã thiết lập đúng.
-6. Bật module, cập nhật script/tài nguyên nếu Shadowrocket còn giữ bản cũ, đóng hẳn rồi mở lại Locket.
+6. Bật module, cập nhật lại module và script/tài nguyên trong Shadowrocket, đóng hẳn rồi mở lại Locket. Bản sửa popup dùng Locket_Only_Config_v3.js để tránh tải lại script cũ.
 7. Để xem giao diện đầy đủ, gõ nguyên địa chỉ HTTP này vào Safari:
    http://locket.thinhle/
    Dùng đúng http:// và dấu / cuối; địa chỉ được module xử lý trên thiết bị. Tắt Shadowrocket hoặc chưa tải Locket_UI.js thì trang sẽ không hoạt động. Không có máy chủ web công khai ở địa chỉ này.
 
 NẾU POPUP TRONG LOCKET CHƯA HIỆN
-- Kiểm tra log Locket.Config có khớp yêu cầu Firebase của dự án locket-4252a và tải được Locket_Only_Config.js.
+- Kiểm tra log Locket.Config có khớp yêu cầu Firebase của dự án locket-4252a và tải được Locket_Only_Config_v3.js.
 - Mở URL ảnh để kiểm tra đã tải lên đúng tên:
   https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-profile-ipa.png
-- Campaign mới là locketlqt_ipa_style_20261017_v2. Locket vẫn có thể lưu Remote Config hoặc trạng thái đã xem theo tài khoản; đổi campaign không bảo đảm hiện lại trên mọi phiên bản.
+- Campaign mới là locketlqt_ipa_style_20261017_v3. Locket vẫn có thể lưu Remote Config hoặc trạng thái đã xem theo tài khoản; đổi campaign không bảo đảm hiện lại trên mọi phiên bản.
+- Nếu vẫn thấy ảnh và chữ @duyvinh.09, popup đó không đến từ cấu hình v3 này. Kiểm tra module cũ còn bật, log quy tắc Locket.Config và bản dữ liệu đã lưu trong ứng dụng. Script Shadowrocket không thay được giao diện hay tài nguyên đã đóng gói sẵn trong IPA.
 - Không xóa ứng dụng hoặc dữ liệu chỉ để ép popup xuất hiện. Nếu chưa được, cung cấp phiên bản Locket và log đã che token/thông tin tài khoản để kiểm tra.
 - Đổi tên hiển thị, URL TikTok hoặc Zalo trong cấu hình không thể thay bố cục native của ứng dụng.
 
