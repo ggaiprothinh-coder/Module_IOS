@@ -1,0 +1,46 @@
+LOCKET • THỊNH LÊ — MODULE RIÊNG CHO SHADOWROCKET
+Bản 17/10/2026
+
+GÓI NÀY CÓ GÌ?
+- Locket_ThinhLe.sgmodule: chỉ các quy tắc Locket, không còn YouTube, Spotify hay app khác.
+- Locket_Only_Gold.js: phần phản hồi RevenueCat tách từ gói bạn cung cấp.
+- Locket_Only_Headers.js: xử lý ETag cho yêu cầu Locket.
+- Locket_Only_Config.js: giữ cấu hình và overlay Locket từ gói gốc, thay nội dung popup.
+- locketlqt-profile-ipa.png: ảnh giới thiệu nền tối, viền tím, đúng logo lấy từ IPA.
+- Locket_UI.js: phục vụ giao diện đầy đủ tại địa chỉ dành riêng bên dưới.
+- Locket_UI.html: bản giao diện HTML độc lập, đã nhúng logo vào tệp.
+- locketlqt-avatar.jpg: logo trích từ IPA bạn gửi.
+
+HAI CÁCH HIỂN THỊ — ĐỌC TRƯỚC KHI CÀI
+1. Trong Locket: module sửa dữ liệu popup có sẵn của ứng dụng, đổi tiêu đề, ảnh, nội dung giới thiệu và campaign. Bố cục, màu nền và hành vi vẫn do phiên bản Locket quyết định. Nút "Đóng" dùng để đóng popup. Không gắn nhãn TikTok cho một nút chỉ đóng popup.
+2. Trong Safari: mở http://locket.thinhle/ khi module và Shadowrocket đang bật. Đây là trang riêng có nền tối, viền tím, logo, mưa ký tự, chữ và nút "VÀO TIKTOK" theo ảnh IPA. Nút mở https://www.tiktok.com/@sinh.vien.ai ; dòng Zalo mở https://zalo.me/0393850048 . Trang này không tự hiện đè lên Locket.
+
+Module Shadowrocket không nạp thư viện libstructexp.dylib và không thể dựng lại popup UIKit trong IPA. Nếu yêu cầu là popup giống từng chi tiết tự bật bên trong Locket, vẫn cần phần mã giao diện trong IPA. Gói này không khẳng định làm được việc đó bằng Remote Config.
+
+CÀI ĐẶT
+1. Giải nén ZIP trong ứng dụng Tệp.
+2. Tải các tệp Locket_Only_*.js, Locket_UI.*, Locket_ThinhLe.sgmodule, ảnh và Locket_ThinhLe_HUONG_DAN.txt trong ZIP lên thư mục gốc của repo Module_IOS, nhánh main:
+   https://github.com/ggaiprothinh-coder/Module_IOS/upload/main
+   Không tải nguyên ZIP và không tạo thêm thư mục bọc. Hoàn tất Commit changes.
+3. Sau khi các tệp đã xuất hiện trên GitHub, vào phần Module của Shadowrocket và thêm URL:
+   https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_ThinhLe.sgmodule
+   URL này chỉ dùng được sau bước 2; gói chưa được tự đăng lên repo của bạn.
+4. Tắt module All_In_One_locketlqt hoặc các quy tắc Locket/RevenueCat cũ bị trùng trước khi bật bản riêng này. Nếu muốn giữ các app khác trong All-in-One, bỏ riêng các dòng LocketGold và RevenueCatVip đang chồng lên endpoint Locket.
+5. HTTPS Decryption phải đang bật, chứng chỉ Shadowrocket đã cài và được tin cậy để các quy tắc HTTPS chạy. Giữ chứng chỉ hiện có nếu đã thiết lập đúng.
+6. Bật module, cập nhật script/tài nguyên nếu Shadowrocket còn giữ bản cũ, đóng hẳn rồi mở lại Locket.
+7. Để xem giao diện đầy đủ, gõ nguyên địa chỉ HTTP này vào Safari:
+   http://locket.thinhle/
+   Dùng đúng http:// và dấu / cuối; địa chỉ được module xử lý trên thiết bị. Tắt Shadowrocket hoặc chưa tải Locket_UI.js thì trang sẽ không hoạt động. Không có máy chủ web công khai ở địa chỉ này.
+
+NẾU POPUP TRONG LOCKET CHƯA HIỆN
+- Kiểm tra log Locket.Config có khớp yêu cầu Firebase của dự án locket-4252a và tải được Locket_Only_Config.js.
+- Mở URL ảnh để kiểm tra đã tải lên đúng tên:
+  https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-profile-ipa.png
+- Campaign mới là locketlqt_ipa_style_20261017_v2. Locket vẫn có thể lưu Remote Config hoặc trạng thái đã xem theo tài khoản; đổi campaign không bảo đảm hiện lại trên mọi phiên bản.
+- Không xóa ứng dụng hoặc dữ liệu chỉ để ép popup xuất hiện. Nếu chưa được, cung cấp phiên bản Locket và log đã che token/thông tin tài khoản để kiểm tra.
+- Đổi tên hiển thị, URL TikTok hoặc Zalo trong cấu hình không thể thay bố cục native của ứng dụng.
+
+NGUỒN VÀ KIỂM TRA
+Script chức năng gốc: @duyvinh09, từ ZIP do bạn cung cấp. Phần cá nhân hóa và tách module dành cho Lê Quang Thịnh / @sinh.vien.ai. Logo lấy từ libstructexp.dylib trong IPA bạn gửi.
+Đã kiểm tra cú pháp JavaScript, 24 lượt chạy mô phỏng, phạm vi URL, tài nguyên trong gói, dữ liệu lỗi và ứng dụng khác đi qua nguyên trạng. Đã so sánh cấu hình ngoài popup với bản gốc và kiểm tra ảnh giới thiệu.
+Chưa chạy trực tiếp trên Shadowrocket/Locket/iPhone, chưa xác nhận Safari render và thao tác trên thiết bị. Không bảo đảm các thay đổi Gold/feature từ script gốc được máy chủ Locket chấp nhận.
