@@ -1,6 +1,6 @@
 #!name=Locket • Thịnh Lê
 #!desc=Module riêng Locket. Popup nội dung gần IPA; giao diện đầy đủ mở ở http://locket.thinhle/ bằng Safari.
-#!author=locketlqt | Script gốc: @duyvinh09
+#!author=Lê Quang Thịnh (locketlqt)
 #!homepage=http://locket.thinhle/
 #!icon=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-profile-ipa.png
 #!url=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_ThinhLe.sgmodule
@@ -16,7 +16,7 @@ DOMAIN,locket.thinhle,DIRECT
 [Script]
 Locket.Gold = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v[0-9]+\/(receipts|subscribers\/[^/?]+)\/?(\?.*)?$,script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_Only_Gold.js,requires-body=true,max-size=-1,timeout=60,engine=jsc
 Locket.Headers = type=http-request,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v[0-9]+\/(receipts|subscribers\/[^/?]+)\/?(\?.*)?$,script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_Only_Headers.js,timeout=10,engine=jsc
-Locket.Config = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_Only_Config_v4.js,requires-body=true,max-size=-1,timeout=60,engine=jsc
+Locket.Config = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_Only_Config_v5.js,requires-body=true,max-size=-1,timeout=60,engine=jsc
 Locket.GiaoDien = type=http-request,pattern=^http:\/\/locket\.thinhle\/(\?.*)?$,script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_UI.js,timeout=10,engine=jsc
 
 [MITM]

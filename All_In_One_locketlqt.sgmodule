@@ -1,9 +1,8 @@
 #!url=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/All_In_One_locketlqt.sgmodule
 #!name=All In One - Lê Quang Thịnh
-#!desc=Module đi cùng All_In_One_ThinhLe.conf; popup Locket dùng @sinh.vien.ai và ảnh ShopThinhLe. Tổng hợp gốc: Đinh Duy Vinh.
+#!desc=Module đi cùng All_In_One_ThinhLe.conf; popup Locket của Thịnh Lê dùng @sinh.vien.ai và ảnh ShopThinhLe.
 #!author=locketlqt
 #!homepage=https://github.com/ggaiprothinh-coder/Module_IOS
-#!tgchannel=https://t.me/tienich
 #!moduleUrl=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/All_In_One_locketlqt.sgmodule
 #!icon=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-avatar.jpg
 #!howtouse=Shadowrocket
@@ -105,7 +104,7 @@ BeautyPlus = type=http-response, pattern=https:\/\/(api\.mr\.pixocial\.com\/v1\/
 #hostname = api.revenuecat.com, firebaseremoteconfig.googleapis.com
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_locketlqt.js, requires-body=true, max-size=-1, timeout=60
 deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/deleteHeader.js, timeout=60
-locket_rc = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_Only_Config_v4.js, requires-body=true, max-size=-1, timeout=60
+locket_rc = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, script-path=https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/Locket_Only_Config_v5.js, requires-body=true, max-size=-1, timeout=60
 #************************************#
 
 #RevenueCatVip
