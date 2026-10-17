@@ -51,16 +51,16 @@ if (ua.includes("Locket")) {
             tag: "LOCKET GOLD",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: "Chào bạn, từ Lê Quang Thịnh 💚",
+            title: "Lên Locket Gold rồi đó 😎",
             feature_set: [
                 {
-                    title: "Nhớ follow TikTok @sinh.vien.ai ✨",
+                    title: "Nhớ follow kênh tiktok @sinh.vien.ai ✨",
                     body: "Một follow của bạn, một niềm vui của mình 💛",
-                    imageURL: "https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-banner.png"
+                    imageURL: "https://raw.githubusercontent.com/ggaiprothinh-coder/Module_IOS/refs/heads/main/locketlqt-avatar.jpg"
                 }
             ],
             primary_button_title: "Xong",
-            campaign: "locketlqt_sinh_vien_ai_welcome_v1",
+            campaign: "locketlqt_gold_name_image_20261017_v4",
             start_at: "2020-01-01T00:00:00",
             end_at: "2099-12-31T23:59:59",
             use_local_time_zone: true
